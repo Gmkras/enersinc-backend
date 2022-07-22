@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+    <link href="{{ url_for('static', filename='css/home.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>{{title}}</h1>
+    <p>{{description}}</p>
+</div>
+
+<div class="row justify-content-center main">
+    <h3 class="text-secondary fw-bolder">Nueva Persona</h3>
+    <form class="main-form" method="POST" action="{{ url_for('api.create') }}" enctype="multipart/form-data">
+        <div class="form-row">
+            <label class="form-label">Nombres</label>
+            <input class="form-input" type="text" name="firstName" id="firstName" required />
+        </div>
+        <div class="form-row">
+            <label class="form-label">Apellidos</label>
+            <input class="form-input" type="text" name="lastName" id="lastName" required />
+        </div>
+        <div class="form-row">
+            <label class="form-label">Tipo Documento</label>
+            <input class="form-input" type="text" name="tipo_documento" id="tipo_documento" required />
+        </div>
+        <div class="form-row">
+            <label class="form-label">Numero de Documento</label>
+            <input class="form-input" type="text" name="numero_documento" id="numero_documento"/>
+        </div>
+        <div class="form-row">
+            <label class="form-label">Hobbie</label>
+            <input class="form-input" type="text" name="hobbie" id="hobbie"/>
+        </div>
+        <button class="form-submit" type="submit">Confirmar</button>
+    </form>
+</div>
+{% endblock %}
