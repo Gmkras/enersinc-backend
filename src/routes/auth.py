@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from funtion_jwt import write_token, validate_token
+from ..funtion_jwt import write_token, validate_token
 
 auth_scope = Blueprint("auth_scope", __name__)
 
