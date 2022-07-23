@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Config:
-    SERVER_NAME= "127.0.0.1:7001"
+    SERVER_NAME= "localhost:7001"
     DEBUG = True
     
     DATABASE_PATH = "src/database/personas"

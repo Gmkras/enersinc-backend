@@ -26,7 +26,7 @@ def get_details(id_):
 @api_scope.route('/personas', methods=['POST'])
 def create():
     data = request.form
-    persona = Persona(nombres=data["firstName"], apellidos=data["lastName"],
+    persona = Persona(nombres=data["nombres"], apellidos=data["apellidos"],
                       tipo_documento=data["tipo_documento"], documento=data["documento"], email=data["email"], hobbie=data["hobbie"])
 
     personas_controller.create(persona)
@@ -37,7 +37,7 @@ def create():
 def update(id_):
     data = request.data
 
-    persona = Persona(id=id_, nombres=data["firstName"], apellidos=data["lastName"],
+    persona = Persona(id=id_, nombres=data["nombres"], apellidos=data["apellidos"],
                       tipo_documento=data["tipo_documento"], documento=data["documento"], email=data["email"], hobbie=data["hobbie"])
 
     persona_new = personas_controller.update(persona)
