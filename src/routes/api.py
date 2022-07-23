@@ -15,7 +15,6 @@ def get_list():
 
     return jsonify(personas_dict)
 
-
 @api_scope.route('/personas/<id_>', methods=['GET'])
 def get_details(id_):
     persona = Persona(id=id_)
@@ -23,7 +22,6 @@ def get_details(id_):
     persona_new = personas_controller.details(persona)
 
     return jsonify(persona_new._asdict())
-
 
 @api_scope.route('/personas', methods=['POST'])
 def create():
@@ -35,7 +33,6 @@ def create():
 
     return redirect(url_for('views.home'))
 
-
 @api_scope.route('/personas/<id_>', methods=['PUT'])
 def update(id_):
     data = request.data
@@ -46,7 +43,6 @@ def update(id_):
     persona_new = personas_controller.update(persona)
 
     return jsonify(persona_new._asdict())
-
 
 @api_scope.route('/personas/<id_>', methods=['DELETE'])
 def delete(id_):
